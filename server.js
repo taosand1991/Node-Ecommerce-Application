@@ -40,7 +40,7 @@ CartItem.sync({ alter: true })
   .then(() => console.log("cart table created"))
   .catch((error) => console.log(error));
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`listening on port ${app.get("port")}`);
 });
 
