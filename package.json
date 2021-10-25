@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "run": "yarn run app.js",
-    "postdeploy": "npm install && npm run build"
+    "build": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
