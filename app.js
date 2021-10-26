@@ -4,8 +4,6 @@ const app = express();
 const cors = require("cors");
 const path = require("path");
 const sequelize = require("./sequelize folder/sequelize");
-const PORT = 5000;
-
 const User = require("./models/User");
 const Product = require("./models/Product");
 const Category = require("./models/Category");
