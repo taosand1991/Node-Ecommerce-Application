@@ -39,7 +39,7 @@ CartItem.sync({ alter: true })
   .catch((error) => console.log(error));
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`listening on port ${app.get("port")}`);
+  console.log(`listening on port ${process.env.PORT}`);
 });
 
 app.use("/uploads", express.static("uploads"));
