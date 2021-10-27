@@ -12,21 +12,25 @@ console.log(env);
 
 let sequelize;
 
-if (env === "development") {
-  sequelize = new Sequelize("lithuania", "postgres", "police", {
-    host: "localhost",
-    dialect: "postgres",
-    logging: false,
-  });
-} else {
-  // sequelize = new Sequelize(database, username, password, {
-  //   host: host,
-  //   dialect: "postgres",
-  //   logging: false,
-  // });
-  sequelize = new Sequelize(
-    `postgres:${username}:${password}@${host}:5432/${database}`
-  );
-}
+// if (env === "development") {
+//   sequelize = new Sequelize("lithuania", "postgres", "police", {
+//     host: "localhost",
+//     dialect: "postgres",
+//     logging: false,
+//   });
+// } else {
+//   // sequelize = new Sequelize(database, username, password, {
+//   //   host: host,
+//   //   dialect: "postgres",
+//   //   logging: false,
+//   // });
+//   sequelize = new Sequelize(
+//     `postgres:${username}:${password}@${host}:5432/${database}`
+//   );
+// }
+
+sequelize = new Sequelize(
+  `postgres:${username}:${password}@${host}:5432/${database}`
+);
 
 module.exports = sequelize;
