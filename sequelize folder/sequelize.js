@@ -33,7 +33,7 @@ if (process.env.NODE_ENVIRONMENT === "development") {
   });
 }
 
-if (process.env.NODE_ENVIRONMENT === "production") {
+if (process.env.PRODUCTION_ENVIRONMENT === "production") {
   sequelize = new Sequelize(
     `postgres:${username}:${password}@${host}:5432/${database}`
   );
