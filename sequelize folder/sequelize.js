@@ -10,7 +10,7 @@ const port = process.env.PORT;
 
 let sequelize;
 
-if (process.env.PRODUCTION_ENVIRONMENT === "production") {
+if (process.env.NODE_ENVIRONMENT !== "development") {
   sequelize = new Sequelize(
     `postgres:${username}:${password}@${host}:5432/${database}`
   );
