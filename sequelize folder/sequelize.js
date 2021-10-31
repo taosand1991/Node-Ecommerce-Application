@@ -7,9 +7,6 @@ const username = process.env.RDS_USERNAME;
 const password = process.env.RDS_PASSWORD || "police1991";
 const port = process.env.PORT;
 
-const env = app.settings.env;
-
-
 let sequelize;
 
 // if (env === "development") {
@@ -28,21 +25,18 @@ let sequelize;
 //     `postgres:${username}:${password}@${host}:5432/${database}`
 //   );
 // }
-if(env === 'development'){
+if (process.env.NODE_ENVIRONMENT === "development") {
   sequelize = new Sequelize("lithuania", "postgres", "police", {
-        host: "localhost",
-        dialect: "postgres",
-        logging: false,
-      });
+    host: "localhost",
+    dialect: "postgres",
+    logging: false,
+  });
 }
 
-if(env === 'production'){
+if (process.env.NODE_ENVIRONMENT === "production") {
   sequelize = new Sequelize(
     `postgres:${username}:${password}@${host}:5432/${database}`
   );
 }
-
-
-
 
 module.exports = sequelize;
