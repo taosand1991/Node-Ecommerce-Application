@@ -15,13 +15,11 @@ if (process.env.PRODUCTION_ENVIRONMENT === "production") {
     `postgres:${username}:${password}@${host}:5432/${database}`
   );
 } else {
-  // if (process.env.NODE_ENVIRONMENT === "development") {
   sequelize = new Sequelize("lithuania", "postgres", "police", {
     host: "localhost",
     dialect: "postgres",
     logging: false,
   });
-  // }
 }
 
 module.exports = sequelize;
