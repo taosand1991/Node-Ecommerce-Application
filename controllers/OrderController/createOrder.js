@@ -1,7 +1,6 @@
 const OrderItem = require("../../models/OrderItem");
 const CartItem = require("../../models/CartItem");
 const Product = require("../../models/Product");
-const User = require("../../models/User");
 const jwt = require("jsonwebtoken");
 
 module.exports = async function (req, res) {
