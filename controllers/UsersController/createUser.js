@@ -12,7 +12,7 @@ module.exports = async function (req, res) {
 
   if (email === "taofeekdboy@yahoo.com") admin = true;
 
-  let user = await User.findOne({ where: { email: email } });
+  const user = await User.findOne({ where: { email: email } });
   try {
     if (user)
       return res.status(400).json({ message: "user already exists!!!!" });
@@ -25,15 +25,6 @@ module.exports = async function (req, res) {
     };
     const hash = await bcrypt.hash(password, (saltRounds = 10));
     const token = await jwt.sign(userPayload, "secret", { expiresIn: "1h" });
-    user = await User.create({
-      email,
-      firstName,
-      lastName,
-      gender,
-      token,
-      admin,
-      password: hash,
-    });
     return res
       .status(200)
       .json({ message: "user has been created succesfully", token: token });
