@@ -4,7 +4,7 @@ const host = process.env.RDS_HOSTNAME;
 const database = process.env.RDS_DB_NAME || "ebdb";
 const username = process.env.RDS_USERNAME;
 const password = process.env.RDS_PASSWORD || "police1991";
-const port = process.env.PORT;
+
 
 // console.log(host, database, username, password, port);
 
