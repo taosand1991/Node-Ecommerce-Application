@@ -31,7 +31,7 @@ module.exports = async function (req, res) {
       const order = await OrderItem.findOne({
         where: { user_id: user.id, ordered: false },
       });
-      if (!order || order === null) {
+      if (!order || order == null) {
         const newOrder = await OrderItem.create({
           user_id: user.id,
           ordered: false,
