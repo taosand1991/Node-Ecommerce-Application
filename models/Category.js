@@ -1,7 +1,6 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../sequelize folder/sequelize");
 
-const Product = require("./Product");
 
 class Category extends Model {}
 
